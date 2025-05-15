@@ -23,8 +23,8 @@ fi
 
 # API Data
 API_URL='https://gabrielpalmar.api.openvpn.com'
-CLIENT_ID='mxjJrhj4CBdUubp3JtlCQaA9szA0zb8J.gabrielpalmar'
-CLIENT_SECRET='obibEHfVbVIgac3nABPKzE7lw06AXV6zq0RHic6g3CI6vnIetNUxeKfJAp15V1K0'
+CLIENT_ID="${OPENVPN_CLIENT_ID:-}"
+CLIENT_SECRET="${OPENVPN_CLIENT_SECRET:-}"
 
 # Generate OAuth token:
 API_TOKEN=$(curl -X POST "${API_URL}/api/v1/oauth/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials" | jq -r '.access_token')
