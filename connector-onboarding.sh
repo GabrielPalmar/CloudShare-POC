@@ -33,7 +33,7 @@ API_TOKEN=$(curl -X POST "${API_URL}/api/v1/oauth/token?client_id=${CLIENT_ID}&c
 UUID=$(sudo dmidecode -t system | grep Serial | awk -F: '{ print $2 }')
 
 # Network Name
-NET_NAME=$(echo $UUID | awk -F- '{ print $1 }')
+NET_NAME=$(echo $UUID | awk -F- '{ print $1,$2 }')
 
 # Create a new network
 NET_PAYLOAD=$(cat <<EOF
