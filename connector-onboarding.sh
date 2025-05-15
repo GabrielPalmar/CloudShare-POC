@@ -38,7 +38,7 @@ NET_NAME=$(echo $UUID | awk -F- '{ print $1,$2 }')
 # Create a new network
 NET_PAYLOAD=$(cat <<EOF
 {
-  "name": "NETWORK $NET_NAME",
+  "name": "$NET_NAME",
   "description": "$UUID",
   "internetAccess": "SPLIT_TUNNEL_ON",
   "egress": false,
